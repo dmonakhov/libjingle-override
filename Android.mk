@@ -269,3 +269,8 @@ LOCAL_CFLAGS += \
 	-DUSE_WEBRTC_313_BRANCH
 
 include $(BUILD_STATIC_LIBRARY)
+
+ifeq ($(ENABLE_UNITTEST), 1)
+$(info Build unittest for libjingle)
+include $(LOCAL_PATH)/unittest.mk
+endif
